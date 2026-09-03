@@ -1,0 +1,30 @@
+{
+  "name": "@rello-platform/scoring-bands",
+  "version": "0.1.0",
+  "description": "Canonical Home Ready scoring band vocabulary for the Rello platform — the five range-string enums (credit / income / price / down payment / monthly debt), their band-to-numeric value maps, and the shared three-outcome input validator (OK / UNRECOGNISED_BAND / INSUFFICIENT_DATA). Single source of truth shared by Rello's POST /api/scoring/calculate and HomeReady's local fallback calculator, so an unrecognised band cannot silently degrade to a default and an absent one cannot be fabricated.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "src", "README.md"],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github:rello-platform/scoring-bands"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}
